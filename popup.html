@@ -3,13 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saviors</title>
+  <title>Saviors - 表單欄位錄製器</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <div class="container">
-    <h1>Saviors</h1>
-    <p>歡迎使用 Saviors 擴充功能！</p>
+    <!-- 頂部標題區域 -->
+    <header class="header">
+      <h1>📝 Saviors</h1>
+      <p class="subtitle">表單欄位錄製器</p>
+    </header>
+
+    <!-- 錄製控制區域 -->
+    <section class="recording-section">
+      <div class="recording-status" id="recordingStatus">
+        <span class="status-indicator" id="statusIndicator"></span>
+        <span class="status-text" id="statusText">未錄製</span>
+      </div>
+      <button class="recording-btn" id="recordingBtn">
+        <span class="btn-icon" id="btnIcon">⏺</span>
+        <span class="btn-text" id="btnText">開始錄製</span>
+      </button>
+    </section>
+
+    <!-- 分頁切換 -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="current" id="tabCurrent">當前頁面</button>
+      <button class="tab" data-tab="history" id="tabHistory">歷史紀錄</button>
+    </nav>
+
+    <!-- 當前頁面區域 -->
+    <section class="tab-content active" id="currentContent">
+      <div class="current-url" id="currentUrl">
+        <span class="url-label">網址:</span>
+        <span class="url-value" id="urlValue">-</span>
+      </div>
+      <div class="current-session" id="currentSession">
+        <p class="no-session">尚未開始錄製</p>
+      </div>
+    </section>
+
+    <!-- 歷史紀錄區域 -->
+    <section class="tab-content" id="historyContent">
+      <div class="url-filter">
+        <select id="urlSelector" class="url-selector">
+          <option value="">所有網址</option>
+        </select>
+      </div>
+      <div class="history-list" id="historyList">
+        <p class="no-history">尚無歷史紀錄</p>
+      </div>
+    </section>
   </div>
   <script src="popup.js"></script>
 </body>
