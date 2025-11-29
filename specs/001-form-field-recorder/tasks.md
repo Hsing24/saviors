@@ -27,10 +27,10 @@ Chrome Extension 專案結構：
 
 **Purpose**: 專案結構建立與基礎配置
 
-- [ ] T001 更新 manifest.json 加入 Manifest V3 必要權限（storage, scripting, activeTab）與 content_scripts 配置
-- [ ] T002 [P] 建立 content/ 目錄結構，含 content.js 與 content.css 空檔
-- [ ] T003 [P] 建立 background/ 目錄結構，含 service-worker.js 空檔
-- [ ] T004 [P] 建立 lib/ 目錄結構，含 storage.js、field-detector.js、captcha-filter.js 空檔
+- [X] T001 更新 manifest.json 加入 Manifest V3 必要權限（storage, scripting, activeTab）與 content_scripts 配置
+- [X] T002 [P] 建立 content/ 目錄結構，含 content.js 與 content.css 空檔
+- [X] T003 [P] 建立 background/ 目錄結構，含 service-worker.js 空檔
+- [X] T004 [P] 建立 lib/ 目錄結構，含 storage.js、field-detector.js、captcha-filter.js 空檔
 
 ---
 
@@ -40,13 +40,13 @@ Chrome Extension 專案結構：
 
 **⚠️ CRITICAL**: 此階段必須完成後，使用者故事才能開始實作
 
-- [ ] T005 實作 Storage Service 基礎架構於 lib/storage.js，包含 Local/Session Storage 操作封裝
-- [ ] T006 實作 URL 正規化函式（移除 query string 與 hash）於 lib/storage.js
-- [ ] T007 [P] 實作訊息類型定義與訊息處理基礎架構於 background/service-worker.js
-- [ ] T008 [P] 實作驗證碼欄位過濾器於 lib/captcha-filter.js，支援可配置的 blocklist 規則
-- [ ] T009 [P] 實作欄位識別器於 lib/field-detector.js，支援複合識別碼策略（id → name → selector）
-- [ ] T010 實作 Content Script 基礎架構於 content/content.js，包含事件委派與 MutationObserver 設置
-- [ ] T011 實作 Service Worker 訊息路由於 background/service-worker.js，處理 Content ↔ Popup 通訊
+- [X] T005 實作 Storage Service 基礎架構於 lib/storage.js，包含 Local/Session Storage 操作封裝
+- [X] T006 實作 URL 正規化函式（移除 query string 與 hash）於 lib/storage.js
+- [X] T007 [P] 實作訊息類型定義與訊息處理基礎架構於 background/service-worker.js
+- [X] T008 [P] 實作驗證碼欄位過濾器於 lib/captcha-filter.js，支援可配置的 blocklist 規則
+- [X] T009 [P] 實作欄位識別器於 lib/field-detector.js，支援複合識別碼策略（id → name → selector）
+- [X] T010 實作 Content Script 基礎架構於 content/content.js，包含事件委派與 MutationObserver 設置
+- [X] T011 實作 Service Worker 訊息路由於 background/service-worker.js，處理 Content ↔ Popup 通訊
 
 **Checkpoint**: 基礎架構就緒 - 可開始實作使用者故事
 
@@ -60,12 +60,12 @@ Chrome Extension 專案結構：
 
 ### Implementation for User Story 1
 
-- [ ] T012 [US1] 更新 popup.html 加入錄製圖示按鈕與狀態顯示區域
-- [ ] T013 [US1] 更新 popup.css 加入錄製圖示樣式（啟用/停用狀態）
-- [ ] T014 [US1] 實作 popup.js 錄製切換邏輯，發送 TOGGLE_RECORDING 訊息至 Service Worker
-- [ ] T015 [US1] 實作 Service Worker 處理 TOGGLE_RECORDING，更新 Session Storage 錄製狀態
-- [ ] T016 [US1] 實作 Content Script 接收 START_RECORDING/STOP_RECORDING 訊息並更新內部狀態
-- [ ] T017 [US1] 實作 popup.js 載入時從 Service Worker 取得當前錄製狀態（GET_RECORDING_STATE）
+- [X] T012 [US1] 更新 popup.html 加入錄製圖示按鈕與狀態顯示區域
+- [X] T013 [US1] 更新 popup.css 加入錄製圖示樣式（啟用/停用狀態）
+- [X] T014 [US1] 實作 popup.js 錄製切換邏輯，發送 TOGGLE_RECORDING 訊息至 Service Worker
+- [X] T015 [US1] 實作 Service Worker 處理 TOGGLE_RECORDING，更新 Session Storage 錄製狀態
+- [X] T016 [US1] 實作 Content Script 接收 START_RECORDING/STOP_RECORDING 訊息並更新內部狀態
+- [X] T017 [US1] 實作 popup.js 載入時從 Service Worker 取得當前錄製狀態（GET_RECORDING_STATE）
 
 **Checkpoint**: 使用者可透過 Popup 切換錄製狀態
 
@@ -79,12 +79,12 @@ Chrome Extension 專案結構：
 
 ### Implementation for User Story 2
 
-- [ ] T018 [US2] 實作 Content Script 欄位變動偵測與計數邏輯於 content/content.js
-- [ ] T019 [US2] 實作 Service Worker 處理 FIELD_CHANGED 訊息，更新欄位變動計數（incrementFieldChangeCount）
-- [ ] T020 [US2] 建立錄製提醒視窗 UI 元件於 content/content.css
-- [ ] T021 [US2] 實作 Content Script 顯示錄製提醒視窗（SHOW_PROMPT）
-- [ ] T022 [US2] 實作提醒視窗「是/否」按鈕互動，發送 PROMPT_RESPONSE 訊息
-- [ ] T023 [US2] 實作 Service Worker 處理 PROMPT_RESPONSE，若接受則建立新 Session，若拒絕則更新 Session Storage
+- [X] T018 [US2] 實作 Content Script 欄位變動偵測與計數邏輯於 content/content.js
+- [X] T019 [US2] 實作 Service Worker 處理 FIELD_CHANGED 訊息，更新欄位變動計數（incrementFieldChangeCount）
+- [X] T020 [US2] 建立錄製提醒視窗 UI 元件於 content/content.css
+- [X] T021 [US2] 實作 Content Script 顯示錄製提醒視窗（SHOW_PROMPT）
+- [X] T022 [US2] 實作提醒視窗「是/否」按鈕互動，發送 PROMPT_RESPONSE 訊息
+- [X] T023 [US2] 實作 Service Worker 處理 PROMPT_RESPONSE，若接受則建立新 Session，若拒絕則更新 Session Storage
 
 **Checkpoint**: 自動提醒錄製功能可獨立運作
 
@@ -98,11 +98,11 @@ Chrome Extension 專案結構：
 
 ### Implementation for User Story 3
 
-- [ ] T024 [US3] 實作 Content Script 監聽 blur 事件，擷取欄位識別與值
-- [ ] T025 [US3] 實作 Content Script 呼叫 captcha-filter.js 過濾驗證碼欄位
-- [ ] T026 [US3] 實作 Service Worker 處理 FIELD_CHANGED 並儲存欄位值（addField）
-- [ ] T027 [US3] 實作欄位更新邏輯：若欄位已存在則覆蓋，否則新增
-- [ ] T028 [US3] 實作 RecordSession 建立邏輯（createSession），以網址+時間戳記為索引
+- [X] T024 [US3] 實作 Content Script 監聽 blur 事件，擷取欄位識別與值
+- [X] T025 [US3] 實作 Content Script 呼叫 captcha-filter.js 過濾驗證碼欄位
+- [X] T026 [US3] 實作 Service Worker 處理 FIELD_CHANGED 並儲存欄位值（addField）
+- [X] T027 [US3] 實作欄位更新邏輯：若欄位已存在則覆蓋，否則新增
+- [X] T028 [US3] 實作 RecordSession 建立邏輯（createSession），以網址+時間戳記為索引
 
 **Checkpoint**: 欄位值可自動儲存至 Local Storage
 
@@ -116,9 +116,9 @@ Chrome Extension 專案結構：
 
 ### Implementation for User Story 4
 
-- [ ] T029 [US4] 實作 Storage Service 查詢函式：getSessionsForUrl、getAllSessions
-- [ ] T030 [US4] 實作歷史紀錄數量限制與清理邏輯（cleanup），每 URL 最多 50 筆
-- [ ] T031 [US4] 實作 Service Worker 處理 GET_RECORDS 訊息，回傳歷史紀錄摘要
+- [X] T029 [US4] 實作 Storage Service 查詢函式：getSessionsForUrl、getAllSessions
+- [X] T030 [US4] 實作歷史紀錄數量限制與清理邏輯（cleanup），每 URL 最多 50 筆
+- [X] T031 [US4] 實作 Service Worker 處理 GET_RECORDS 訊息，回傳歷史紀錄摘要
 
 **Checkpoint**: 歷史紀錄以正確結構儲存並可查詢
 
@@ -132,16 +132,16 @@ Chrome Extension 專案結構：
 
 ### Implementation for User Story 5
 
-- [ ] T032 [US5] 更新 popup.html 加入歷史紀錄列表區域與 URL 選擇器
-- [ ] T033 [US5] 更新 popup.css 加入歷史紀錄列表樣式
-- [ ] T034 [US5] 實作 popup.js 載入並顯示歷史紀錄列表（依時間戳記排序）
-- [ ] T035 [US5] 實作 popup.js 歷史紀錄展開/收合互動，顯示欄位詳情
-- [ ] T036 [US5] 實作 Service Worker 處理 SCROLL_TO_FIELD 訊息，轉發至 Content Script
-- [ ] T037 [US5] 實作 Content Script 處理 SCROLL_TO_FIELD，捲動頁面至目標欄位
-- [ ] T038 [US5] 實作 Service Worker 處理 APPLY_FIELD_VALUE 訊息，轉發至 Content Script
-- [ ] T039 [US5] 實作 Content Script 處理 APPLY_FIELD_VALUE，將值填入目標欄位
-- [ ] T040 [US5] 實作 popup.js 點擊欄位 key 觸發捲動
-- [ ] T041 [US5] 實作 popup.js 點擊帶入按鈕觸發值填入
+- [X] T032 [US5] 更新 popup.html 加入歷史紀錄列表區域與 URL 選擇器
+- [X] T033 [US5] 更新 popup.css 加入歷史紀錄列表樣式
+- [X] T034 [US5] 實作 popup.js 載入並顯示歷史紀錄列表（依時間戳記排序）
+- [X] T035 [US5] 實作 popup.js 歷史紀錄展開/收合互動，顯示欄位詳情
+- [X] T036 [US5] 實作 Service Worker 處理 SCROLL_TO_FIELD 訊息，轉發至 Content Script
+- [X] T037 [US5] 實作 Content Script 處理 SCROLL_TO_FIELD，捲動頁面至目標欄位
+- [X] T038 [US5] 實作 Service Worker 處理 APPLY_FIELD_VALUE 訊息，轉發至 Content Script
+- [X] T039 [US5] 實作 Content Script 處理 APPLY_FIELD_VALUE，將值填入目標欄位
+- [X] T040 [US5] 實作 popup.js 點擊欄位 key 觸發捲動
+- [X] T041 [US5] 實作 popup.js 點擊帶入按鈕觸發值填入
 
 **Checkpoint**: 歷史紀錄可檢視、捲動、帶入
 
@@ -155,11 +155,11 @@ Chrome Extension 專案結構：
 
 ### Implementation for User Story 6
 
-- [ ] T042 [US6] 實作 popup.js 開啟歷史面板時發送 NOTIFY_HISTORY_PANEL_STATE（isOpen: true）
-- [ ] T043 [US6] 實作 Service Worker 處理 NOTIFY_HISTORY_PANEL_STATE，暫停錄製並更新狀態
-- [ ] T044 [US6] 實作 Service Worker 發送 STOP_RECORDING（reason: history_panel_opened）至 Content Script
-- [ ] T045 [US6] 實作 popup.js 關閉歷史面板時發送 NOTIFY_HISTORY_PANEL_STATE（isOpen: false）
-- [ ] T046 [US6] 實作 Service Worker 處理面板關閉，重置 Session Storage 中的 declinedPrompt 與 fieldChangeCount
+- [X] T042 [US6] 實作 popup.js 開啟歷史面板時發送 NOTIFY_HISTORY_PANEL_STATE（isOpen: true）
+- [X] T043 [US6] 實作 Service Worker 處理 NOTIFY_HISTORY_PANEL_STATE，暫停錄製並更新狀態
+- [X] T044 [US6] 實作 Service Worker 發送 STOP_RECORDING（reason: history_panel_opened）至 Content Script
+- [X] T045 [US6] 實作 popup.js 關閉歷史面板時發送 NOTIFY_HISTORY_PANEL_STATE（isOpen: false）
+- [X] T046 [US6] 實作 Service Worker 處理面板關閉，重置 Session Storage 中的 declinedPrompt 與 fieldChangeCount
 
 **Checkpoint**: 歷史清單與錄製互斥機制完成
 
@@ -169,11 +169,11 @@ Chrome Extension 專案結構：
 
 **Purpose**: 跨功能改善與文件更新
 
-- [ ] T047 [P] 更新 README.md 加入表單欄位錄製器使用說明
-- [ ] T048 程式碼清理與重構，確保符合 ES2022 標準
-- [ ] T049 [P] 加入錯誤處理與 console 日誌，便於除錯
-- [ ] T050 效能驗證：Popup 載入 < 200ms、欄位儲存 < 1s
-- [ ] T051 執行 quickstart.md 驗證所有功能流程
+- [X] T047 [P] 更新 README.md 加入表單欄位錄製器使用說明
+- [X] T048 程式碼清理與重構，確保符合 ES2022 標準
+- [X] T049 [P] 加入錯誤處理與 console 日誌，便於除錯
+- [X] T050 效能驗證：Popup 載入 < 200ms、欄位儲存 < 1s
+- [X] T051 執行 quickstart.md 驗證所有功能流程
 
 ---
 

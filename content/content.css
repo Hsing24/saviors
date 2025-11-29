@@ -1,0 +1,96 @@
+/* Content Script Styles: Form Field Recorder */
+/* 錄製提醒視窗與欄位高亮樣式 */
+
+/* 錄製提醒視窗 */
+.saviors-prompt {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2147483647;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  animation: saviors-slide-in 0.3s ease-out;
+}
+
+@keyframes saviors-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.saviors-prompt-content {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  padding: 16px 20px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.saviors-prompt-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.saviors-prompt-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+.saviors-prompt-text p {
+  font-size: 13px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.saviors-prompt-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.saviors-prompt-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saviors-prompt-btn-yes {
+  background: #4CAF50;
+  color: #ffffff;
+}
+
+.saviors-prompt-btn-yes:hover {
+  background: #43A047;
+}
+
+.saviors-prompt-btn-no {
+  background: #f5f5f5;
+  color: #666666;
+}
+
+.saviors-prompt-btn-no:hover {
+  background: #eeeeee;
+}
+
+/* 欄位高亮動畫 */
+.saviors-field-highlight {
+  outline: 3px solid #4CAF50 !important;
+  outline-offset: 2px;
+  transition: outline 0.3s ease;
+}
